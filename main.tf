@@ -1,7 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
 resource "azurerm_resource_group" "aks_rg" {
   name     = "devops17-sg"
   location = "East US"

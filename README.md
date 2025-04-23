@@ -18,25 +18,35 @@ This project provisions an Azure Kubernetes Service (AKS) cluster using Terrafor
 ## 🧪 Steps to Deploy AKS using Terraform
 
 ### 1️⃣ Authenticate to Azure
+```bash
 az login
 az account set --subscription "<YOUR_SUBSCRIPTION_NAME_OR_ID>"
+```
 
 
 
 ### 2️⃣ Update your SSH key
+```hcl
 variable "ssh_public_key" {
   default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD..."  # Replace with your real SSH key
 }
+```
 
 
 ### 3️⃣ Initialize Terraform
+```bash
 terraform init
+```
 
 ### 4️⃣ Preview the Terraform execution plan
+```bash
 terraform plan
+```
 
 ### 5️⃣ Apply the Terraform plan
+```bash
 terraform apply
+```
 
 ✅ Post-Deployment: Access Your AKS Cluster
 
@@ -52,7 +62,7 @@ kubectl get nodes
  📌 Notes
 Default node count: 3
 
-VM size: Standard_DS2_v2
+VM size: Standard_D2s_v3
 
 Azure region: East US (change in variables.tf)
 

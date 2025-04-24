@@ -19,7 +19,7 @@ This project provisions an Azure Kubernetes Service (AKS) cluster using Terrafor
 
 ### 1️⃣ Authenticate to Azure
 ```bash
-az login
+az login  --use-device-code
 az account set --subscription "<YOUR_SUBSCRIPTION_NAME_OR_ID>"
 ```
 

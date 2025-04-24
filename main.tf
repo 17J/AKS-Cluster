@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "aks_rg" {
 # Virtual Network for AKS
 resource "azurerm_virtual_network" "aks_vnet" {
   name                = "devops17-vnet"
-  address_space       = ["10.0.0.0/16"]
+  address_space       = ["10.2.0.0/24"]
   location            = azurerm_resource_group.aks_rg.location
   resource_group_name = azurerm_resource_group.aks_rg.name
 }
@@ -17,7 +17,7 @@ resource "azurerm_subnet" "aks_subnet" {
   name                 = "devops17-subnet"
   resource_group_name  = azurerm_resource_group.aks_rg.name
   virtual_network_name = azurerm_virtual_network.aks_vnet.name
-  address_prefixes     = ["10.0.1.0/24"]
+  address_prefixes     = ["10.2.0.0/24"]
 }
 
 # AKS Cluster with System Assigned Identity

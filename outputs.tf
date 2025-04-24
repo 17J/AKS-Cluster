@@ -7,6 +7,7 @@ output "kube_config" {
 # Output the cluster host URL
 output "host" {
   value = azurerm_kubernetes_cluster.aks_cluster.kube_config.0.host
+  sensitive = true
 }
 
 # Output the client certificate (not usually needed manually)
